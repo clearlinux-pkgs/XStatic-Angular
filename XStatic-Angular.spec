@@ -4,7 +4,7 @@
 #
 Name     : XStatic-Angular
 Version  : 1.3.18.1
-Release  : 13
+Release  : 14
 URL      : https://pypi.python.org/packages/source/X/XStatic-Angular/XStatic-Angular-1.3.18.1.tar.gz
 Source0  : https://pypi.python.org/packages/source/X/XStatic-Angular/XStatic-Angular-1.3.18.1.tar.gz
 Summary  : Angular 1.3.18 (XStatic packaging standard)

@@ -4,7 +4,7 @@
 #
 Name     : XStatic-Angular
 Version  : 1.4.10.1
-Release  : 15
+Release  : 16
 URL      : http://pypi.debian.net/XStatic-Angular/XStatic-Angular-1.4.10.1.tar.gz
 Source0  : http://pypi.debian.net/XStatic-Angular/XStatic-Angular-1.4.10.1.tar.gz
 Summary  : XStatic-Angular
@@ -53,4 +53,8 @@ python2 -tt setup.py build -b py2 install --root=%{buildroot}
 
 %files python
 %defattr(-,root,root,-)
+%exclude /usr/lib/python2.7/site-packages/xstatic/__init__.py
+%exclude /usr/lib/python2.7/site-packages/xstatic/__init__.pyc
+%exclude /usr/lib/python2.7/site-packages/xstatic/pkg/__init__.py
+%exclude /usr/lib/python2.7/site-packages/xstatic/pkg/__init__.pyc
 /usr/lib/python*/*

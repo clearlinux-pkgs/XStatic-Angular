@@ -1,2 +1,6 @@
 # This file contains the output files that need %exclude. Full path
 # names, one per line.
+/usr/lib/python2.7/site-packages/xstatic/__init__.py
+/usr/lib/python2.7/site-packages/xstatic/__init__.pyc
+/usr/lib/python2.7/site-packages/xstatic/pkg/__init__.pyc
+/usr/lib/python2.7/site-packages/xstatic/pkg/__init__.py

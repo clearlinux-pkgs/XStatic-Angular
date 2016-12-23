@@ -4,7 +4,7 @@
 #
 Name     : XStatic-Angular
 Version  : 1.4.10.1
-Release  : 16
+Release  : 17
 URL      : http://pypi.debian.net/XStatic-Angular/XStatic-Angular-1.4.10.1.tar.gz
 Source0  : http://pypi.debian.net/XStatic-Angular/XStatic-Angular-1.4.10.1.tar.gz
 Summary  : XStatic-Angular

@@ -4,7 +4,7 @@
 #
 Name     : XStatic-Angular
 Version  : 1.5.8.0
-Release  : 18
+Release  : 19
 URL      : http://pypi.debian.net/XStatic-Angular/XStatic-Angular-1.5.8.0.tar.gz
 Source0  : http://pypi.debian.net/XStatic-Angular/XStatic-Angular-1.5.8.0.tar.gz
 Summary  : Angular 1.5.8 (XStatic packaging standard)

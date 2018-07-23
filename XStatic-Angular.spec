@@ -4,9 +4,9 @@
 #
 Name     : XStatic-Angular
 Version  : 1.5.8.0
-Release  : 22
-URL      : http://pypi.debian.net/XStatic-Angular/XStatic-Angular-1.5.8.0.tar.gz
-Source0  : http://pypi.debian.net/XStatic-Angular/XStatic-Angular-1.5.8.0.tar.gz
+Release  : 23
+URL      : https://files.pythonhosted.org/packages/03/30/4912d6b0b0a10748919bedea4859c8d32197d20b0062e5298903648e121f/XStatic-Angular-1.5.8.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/03/30/4912d6b0b0a10748919bedea4859c8d32197d20b0062e5298903648e121f/XStatic-Angular-1.5.8.0.tar.gz
 Summary  : Angular 1.5.8 (XStatic packaging standard)
 Group    : Development/Tools
 License  : MIT MPL-2.0
@@ -58,7 +58,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532213957
+export SOURCE_DATE_EPOCH=1532325089
 python3 setup.py build -b py3
 
 %install

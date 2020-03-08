@@ -4,19 +4,15 @@
 #
 Name     : XStatic-Angular
 Version  : 1.5.8.0
-Release  : 28
+Release  : 29
 URL      : https://files.pythonhosted.org/packages/03/30/4912d6b0b0a10748919bedea4859c8d32197d20b0062e5298903648e121f/XStatic-Angular-1.5.8.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/03/30/4912d6b0b0a10748919bedea4859c8d32197d20b0062e5298903648e121f/XStatic-Angular-1.5.8.0.tar.gz
 Summary  : Angular 1.5.8 (XStatic packaging standard)
 Group    : Development/Tools
 License  : MIT MPL-2.0
-Requires: XStatic-Angular-python3
-Requires: XStatic-Angular-python
+Requires: XStatic-Angular-python = %{version}-%{release}
+Requires: XStatic-Angular-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pbr
-BuildRequires : pip
-BuildRequires : python3-dev
-BuildRequires : setuptools
 
 %description
 ---------------
@@ -34,7 +30,7 @@ BuildRequires : setuptools
 %package python
 Summary: python components for the XStatic-Angular package.
 Group: Default
-Requires: XStatic-Angular-python3
+Requires: XStatic-Angular-python3 = %{version}-%{release}
 Provides: xstatic-angular-python
 
 %description python
@@ -45,6 +41,7 @@ python components for the XStatic-Angular package.
 Summary: python3 components for the XStatic-Angular package.
 Group: Default
 Requires: python3-core
+Provides: pypi(xstatic_angular)
 
 %description python3
 python3 components for the XStatic-Angular package.
@@ -52,21 +49,34 @@ python3 components for the XStatic-Angular package.
 
 %prep
 %setup -q -n XStatic-Angular-1.5.8.0
+cd %{_builddir}/XStatic-Angular-1.5.8.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1532325089
-python3 setup.py build -b py3
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1583702624
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
+export MAKEFLAGS=%{?_smp_mflags}
+python3 setup.py build
 
 %install
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
+## Remove excluded files
+rm -f %{buildroot}/usr/lib/python2.7/site-packages/xstatic/__init__.py
+rm -f %{buildroot}/usr/lib/python2.7/site-packages/xstatic/__init__.pyc
+rm -f %{buildroot}/usr/lib/python2.7/site-packages/xstatic/pkg/__init__.pyc
+rm -f %{buildroot}/usr/lib/python2.7/site-packages/xstatic/pkg/__init__.py
 
 %files
 %defattr(-,root,root,-)
